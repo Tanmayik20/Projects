@@ -1,0 +1,360 @@
+/* Basic Resets */
+body {
+    margin: 0;
+    font-family: 'Amazon Ember', Arial, sans-serif; /* Amazon's typical font */
+    background-color: #f0f2f5;
+}
+
+/* Amazon Header Styles */
+.amazon-header {
+    background-color: #131921; /* Amazon's dark blue background */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px; /* Adjust padding as needed */
+    min-height: 60px; /* Minimum height for the header */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Base style for all links/interactive elements in header */
+.amazon-header a,
+.amazon-header button,
+.amazon-header select {
+    text-decoration: none;
+    color: #fff;
+    display: flex; /* Make flex to align content easily */
+    align-items: center;
+    padding: 5px 8px;
+    border: 1px solid transparent; /* For hover effect */
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: normal;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.amazon-header a:hover,
+.amazon-header button:hover,
+.amazon-header select:hover {
+    border: 1px solid #fff; /* White border on hover */
+}
+
+/* Left Section */
+.header-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.header-logo {
+    margin-right: 15px;
+    position: relative;
+    padding: 5px 8px; /* Override base padding for specific logo spacing */
+}
+
+.header-logo img {
+    height: 28px; /* Amazon logo height */
+    margin-top: 5px; /* Adjust vertical alignment */
+}
+
+.logo-country {
+    position: absolute;
+    bottom: 2px;
+    right: -10px; /* Adjust as needed */
+    font-size: 11px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.header-location {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 5px;
+    margin-right: 10px;
+}
+
+.header-location .fa-map-marker-alt {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.location-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+}
+
+.deliver-to {
+    font-size: 11px;
+    color: #ccc;
+}
+
+.user-location {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Middle Section - Search Bar */
+.header-middle {
+    flex-grow: 1; /* Allows search bar to take up available space */
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    max-width: 800px; /* Limit search bar width */
+    height: 40px; /* Height for the search bar container */
+    border-radius: 4px;
+    overflow: hidden; /* Ensures dropdown and input corners are rounded */
+}
+
+.search-dropdown {
+    background-color: #e6e6e6;
+    color: #555;
+    border: none;
+    padding: 0 10px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    outline: none;
+    font-size: 12px;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.search-dropdown option {
+    color: #000;
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0 10px;
+    font-size: 15px;
+    outline: none;
+    color: #111;
+}
+
+.search-button {
+    background-color: #febd69; /* Amazon's orange search button */
+    border: none;
+    color: #111;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.search-button:hover {
+    background-color: #f3a847; /* Darker orange on hover */
+}
+
+/* Right Section */
+.header-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    padding: 5px 8px; /* Apply base padding */
+}
+
+.language-selector .flag-icon {
+    width: 16px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.language-text {
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.header-account,
+.header-returns {
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2; /* Adjust line height for multi-line text */
+    margin-right: 15px;
+    padding: 5px 8px; /* Apply base padding */
+}
+
+.account-text-top,
+.returns-text-top {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.account-text-bottom,
+.returns-text-bottom {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.header-cart {
+    position: relative;
+    padding: 5px 8px; /* Apply base padding */
+}
+
+.header-cart .fa-shopping-cart {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.cart-count {
+    position: absolute;
+    top: 5px;
+    left: 28px;
+    background-color: transparent; /* No background */
+    color: #febd69; /* Amazon's orange for cart count */
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    min-width: 20px; /* Ensure space for double digits */
+}
+
+.cart-text {
+    font-weight: bold;
+    margin-top: 10px; /* Push "Cart" text down */
+}
+
+/* Sub-navigation Bar */
+.sub-nav {
+    background-color: #232f3e; /* Darker blue for sub-nav */
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    color: #fff;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.sub-nav a:hover {
+    border: 1px solid #fff;
+}
+
+.sub-nav .fa-bars {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .header-middle {
+        margin: 0 5px;
+    }
+    .language-selector {
+        margin-right: 10px;
+    }
+    .header-account,
+    .header-returns {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-returns {
+        display: none; /* Hide Returns & Orders on smaller screens */
+    }
+    .header-location {
+        padding-left: 0;
+        margin-right: 5px;
+    }
+    .header-logo {
+        margin-right: 5px;
+    }
+    .header-left, .header-right {
+        min-width: unset; /* Allow sections to shrink more */
+    }
+}
+
+@media (max-width: 768px) {
+    .amazon-header {
+        flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
+        justify-content: center;
+        padding-bottom: 0; /* Adjust padding for wrapped layout */
+    }
+
+    .header-left, .header-right {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .header-middle {
+        order: 3; /* Move search bar to the bottom on small screens */
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0 15px; /* Add padding to search bar container */
+    }
+
+    .header-logo .logo-country {
+        display: none; /* Hide country suffix on small screens */
+    }
+
+    .language-selector {
+        display: none; /* Hide language selector on small screens */
+    }
+
+    .header-account {
+        margin-right: 20px;
+    }
+
+    .sub-nav {
+        display: none; /* Sub-navigation typically hidden or simplified on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .amazon-header {
+        padding: 8px 10px;
+    }
+
+    .header-logo img {
+        height: 25px;
+    }
+
+    .header-location {
+        display: none; /* Hide location on very small screens */
+    }
+
+    .header-account {
+        margin-right: 10px;
+    }
+
+    .header-cart .fa-shopping-cart {
+        font-size: 25px;
+    }
+    .cart-count {
+        top: 8px;
+        left: 22px;
+        font-size: 14px;
+    }
+    .cart-text {
+        margin-top: 8px;
+    }
+}
